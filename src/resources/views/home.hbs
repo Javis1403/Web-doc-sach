@@ -1,0 +1,43 @@
+<div class="content">
+  <!--
+  <h1 style="border-bottom: solid 2px rgb(231, 231, 231); width: 100%">
+    Truyện nổi bật
+  </h1>
+  <div class="hot_content">
+    <div class="hot_item">
+      <div class="hot_picture">
+        <a href="item.html" style="margin: 5%; margin-right: 5%"><b
+            style="color: white; font-size: 20px"
+          >Over lord</b></a>
+      </div>
+    </div>
+
+  </div>
+  -->
+  <h1 style="border-bottom: solid 2px rgb(231, 231, 231); width: 100%">
+    Mới cập nhật
+  </h1>
+  <div class="new_content">
+
+    {{#each Light_novels}}
+      <div class="new_item">
+        <div class="new_picture"><a href="/detail/{{this.slug}}">
+
+            <img
+              src="{{this.anh}}"
+              style="height: 100%;
+            width: 100%;
+            border-radius: 10px;"
+            />
+          </a>
+        </div>
+        <a
+          href="/detail/{{this.slug}}"
+          style="margin-left: 5%; margin-right: 5%"
+        ><b>{{this.ten}}</b></a>
+        <p style="margin-left: 5%; margin-right: 5%">{{this.theloai}}</p>
+      </div>
+    {{/each}}
+
+  </div>
+</div>

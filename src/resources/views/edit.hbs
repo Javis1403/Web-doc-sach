@@ -1,0 +1,98 @@
+<div class="content">
+  <h1 style="border-bottom: solid 2px rgb(231, 231, 231); width: 100%">
+    Cập nhật truyện:
+  </h1>
+  <form method="post" action="/manager/manager/{{Light_novels.ten}}">
+    <div class="mb-3">
+      <label for="ten" class="form-label">Tên truyện:</label>
+      <input
+        type="text"
+        class="form-control"
+        value="{{Light_novels.ten}}"
+        id="ten"
+        name="ten"
+      />
+
+    </div>
+
+    <div class="mb-3">
+      <label for="theloai" class="form-label">Thể loại:</label>
+      <input
+        type="text"
+        class="form-control"
+        value="{{Light_novels.theloai}}"
+        id="theloai"
+        name="theloai"
+      />
+
+    </div>
+
+    <div class="mb-3">
+      <label for="tacgia" class="form-label">Tác giả:</label>
+      <input
+        type="text"
+        class="form-control"
+        value="{{Light_novels.tacgia}}"
+        id="tacgia"
+        name="tacgia"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="tomtat" class="form-label">Tóm tắt:</label>
+      <input
+        type="text"
+        class="form-control"
+        value="{{Light_novels.tomtat}}"
+        id="tomtat"
+        name="tomtat"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="noidung" class="form-label">Nội dung:</label>
+      <input
+        type="text"
+        class="form-control"
+        value="{{Light_novels.noidung}}"
+        id="noidung"
+        name="noidung"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="anh" class="form-label">Ảnh bìa:</label>
+      <input
+        type="text"
+        class="form-control"
+        value="{{Light_novels.anh}}"
+        id="anh"
+        name="anh"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="anhd" class="form-label">Ảnh chi tiết:</label>
+      <input
+        type="text"
+        class="form-control"
+        value="{{Light_novels.anhd}}"
+        id="anhd"
+        name="anhd"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="slug" class="form-label">Đường dẫn</label>
+      <input
+        type="text"
+        class="form-control"
+        value="{{Light_novels.slug}}"
+        id="slug"
+        name="slug"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Cập nhật</button>
+  </form>
+</div>

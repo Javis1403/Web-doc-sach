@@ -1,0 +1,82 @@
+<div class="content">
+  <h1 style="border-bottom: solid 2px rgb(231, 231, 231); width: 100%">
+    Quản lí truyện:
+  </h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Stt</th>
+        <th scope="col">Tên</th>
+        <th scope="col">Thể loại</th>
+        <th scope="col" colspan="2">Tác giả</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each Light_novels}}
+        <tr>
+          <th scope="row">{{sum @index 1}}</th>
+          <td>{{this.ten}}</td>
+          <td>{{this.theloai}}</td>
+          <td>{{this.tacgia}}</td>
+          <td>
+            <a
+              href="/manager/manager/{{this._id}}/edit"
+              class="btn btn-link"
+            >Sửa</a>
+            <a
+              href=""
+              class="btn btn-link"
+              data-bs-toggle="modal"
+              data-id="{{this._id}}"
+              data-bs-target="#delete-ln"
+            >Xóa</a>
+          </td>
+        </tr>
+      {{/each}}
+
+    </tbody>
+  </table>
+  <div class="menu">
+    <button>
+      <a href="/detail/create"><b style="color: white;">Thêm truyện</b></a>
+    </button>
+  </div>
+</div>
+
+<div id="delete-ln" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Xác nhận xóa</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>Bạn có chắc chắn muốn xóa truyện này không</p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >Không, tôi ấn nhầm</button>
+        <button id="btn-xoa" type="button" class="btn btn-primary">Chắc chắn</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+
+  <form name="delete-form" method="post" ></form>
+  document.addEventListener('DOMContentLoaded', function(){ var deleteForm =
+  document.forms("delete-form"); var lnid; var btndelete =
+  document.getElementById('btn-xoa');
+  $('#delete-ln').on('show.bs.modal',function (event){ var button =
+  $(event.relatedTarget); lnid = button.data('id'); }); btndelete.onclick =
+  function(){ deleteForm.action = '/manager/manager/'+ lnid + '?_method=DELETE';
+  deleteForm.submit(); } });
+</script>
